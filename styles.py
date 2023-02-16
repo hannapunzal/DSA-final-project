@@ -1,6 +1,14 @@
 #style module
 #using dictionary for easier storing
 
+# game design
+winBackground = "ffcc00"
+loseBackground = "#000000"
+loseFont = ("Courier New", 48, "bold")
+loseColor = "#ffffff"
+cellColor = "#c2b3a9"
+boxColor = "#a39489"
+
 # assigning font face and size depending on the cell space
 numberFonts = {
     2: ("Courier New", 55, "bold"),
