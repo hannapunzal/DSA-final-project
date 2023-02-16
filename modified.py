@@ -13,3 +13,9 @@ def __init__(self): #initializing game window and organizing tkinter widgets int
     self.main_grid.grid(pady=(80,0)) #vertical padding
     self.interface() #function for cell frames
     self.initGame() #function for game to commence
+
+    #tkinter key binding for controls
+    self.master.bind("<Left>", self.left)
+    self.master.bind("<Right>", self.right)
+    self.master.bind("<Up>", self.up)
+    self.master.bind("<Down", self.down)
