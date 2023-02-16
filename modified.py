@@ -19,3 +19,6 @@ def __init__(self): #initializing game window and organizing tkinter widgets int
     self.master.bind("<Right>", self.right)
     self.master.bind("<Up>", self.up)
     self.master.bind("<Down", self.down)
+
+    #running the tkinter event loop
+    self.mainloop()
