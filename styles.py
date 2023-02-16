@@ -1,6 +1,7 @@
 #style module
+#using dictionary for easier storing
 
-#assigning distinct color for each number cell
+#assigning distinct color [from the original cellphone game] for each number cell
 cellColors = { 
     2: "#fcefe6",
     4: "#f2e8cb",
@@ -13,4 +14,19 @@ cellColors = {
     512: "#ffdb4a",
     1024: "#f0b922",
     2048: "#fad74d"
+}
+
+# color code for each cell
+cellNumberColors = {
+    2: "#695c57",
+    4: "#695c57",
+    8: "#ffffff",
+    16: "#ffffff",
+    32: "#ffffff",
+    64: "#ffffff",
+    128: "#ffffff",
+    256: "#ffffff",
+    512: "#ffffff",
+    1024: "#ffffff",
+    2048: "#ffffff"
 }
