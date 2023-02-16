@@ -1,6 +1,21 @@
 #style module
 #using dictionary for easier storing
 
+# assigning font face and size depending on the cell space
+numberFonts = {
+    2: ("Courier New", 55, "bold"),
+    4: ("Courier New", 55, "bold"),
+    8: ("Courier New", 55, "bold"),
+    16: ("Courier New", 50, "bold"),
+    32: ("Courier New", 50, "bold"),
+    64: ("Courier New", 50, "bold"),
+    128: ("Courier New", 42, "bold"),
+    256: ("Courier New", 42, "bold"),
+    512: ("Courier New", 38, "bold"),
+    1024: ("Courier New", 38, "bold"),
+    2048: ("Courier New", 32, "bold")
+}
+
 #assigning distinct color [from the original cellphone game] for each number cell
 cellColors = { 
     2: "#fcefe6",
