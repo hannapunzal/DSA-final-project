@@ -1,5 +1,5 @@
 #style module
-#using dictionary for easier storing
+#using dictionary for easier storing and accessing
 
 # game design
 winBackground = "ffcc00"
