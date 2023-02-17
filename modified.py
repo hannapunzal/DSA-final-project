@@ -153,7 +153,7 @@ class Game(tk.Frame):
                         bg=s.cellColors[cell_value])
                     self.cells[i][j]["number"].configure(
                         bg=s.cellColors[cell_value],
-                        fg=s.cellColors[cell_value],
+                        fg=s.cellNumberColors[cell_value],
                         font=s.numberFonts[cell_value],
                         text=str(cell_value))
         self.score_label.configure(text=self.score)
