@@ -26,7 +26,7 @@ class Game(tk.Frame):
         self.master.bind("<Left>", self.left)
         self.master.bind("<Right>", self.right)
         self.master.bind("<Up>", self.up)
-        self.master.bind("<Down", self.down)
+        self.master.bind("<Down>", self.down)
 
         #running the tkinter event loop
         self.mainloop()
@@ -85,6 +85,8 @@ class Game(tk.Frame):
             fg=s.cellNumberColors[2],
             font=s.numberFonts[2],
             text="2")
+        
+        self.score = 0 
 
     # functions for matrix manipulation 
 
