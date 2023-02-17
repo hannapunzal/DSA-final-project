@@ -1,8 +1,9 @@
-# watch video demo for part by part code explanation
 # modified functions:
+#            used tkinter for game window ui
 #            changed style and game design through styles module
 #            modified the dsa into a simpler version
 #            changed the structure for traversing, accessing, and manipulating matrix/game cells
+#            added score increment and display
 
 import random
 import tkinter as tk
@@ -37,16 +38,27 @@ def interface(self):
         for j in range(4):
             cell_frame = tk.Frame(
                 self.main_grid,
-                bg = s.cellColor,
+                bg = s.emptyCellColor,
                 width = 130,
                 height = 130
             )
             cell_frame.grid(row=i, column=j, padx=5, pady=5)
-            cell_number = tk.Label(self.main_grid, bg=s.cellColor)
+            cell_number = tk.Label(self.main_grid, bg=s.emptyCellColor)
             cell_number.grid(row=i, column=j)
             cell_data = {"frame": cell_frame, "number": cell_number}
             row.append(cell_data)
         self.cells.append(row)
+
+    # for score display
+    score_frame = tk.Frame(self)
+    score_frame.place(relx=0.5, y=38, anchor="center")
+    tk.Label(
+        score_frame,
+        text="Score",
+        font=s.scoreTitleFont).grid(
+        row=0)
+    self.score_label = tk.Label(score_frame, text="0", font=s.scoreNumberFont)
+    self.score_label.grid(row=1)
 
 def initGame(self):
     #matrix of 0
@@ -123,3 +135,23 @@ def addNewTile(self):
             row = random.randint(0, 3)
             col = random.randint(0, 3)
         self.matrix[row][col] = random.choice([2, 4])
+
+# matching the matrix through updating the interface
+def interfaceUpdate(self):
+    for i in range(4):
+        for j in range(4):
+            cell_value = self.matrix[i][j]
+            if cell_value == 0:
+                self.cells[i][j]["frame"].configure(bg=s.emptyCellColor)
+                self.cells[i][j]["number"].configure(
+                    bg=s.emptyCellColor, text="")
+            else:
+                self.cells[i][j]["frame"].configure(
+                    bg=s.cellColors[cell_value])
+                self.cells[i][j]["number"].configure(
+                    bg=s.cellColors[cell_value],
+                    fg=s.cellColors[cell_value],
+                    font=s.numberFonts[cell_value],
+                    text=str(cell_value))
+    self.score_label.configure(text=self.score)
+    self.update_idletasks()

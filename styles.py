@@ -6,8 +6,10 @@ winBackground = "ffcc00"
 loseBackground = "#000000"
 loseFont = ("Courier New", 48, "bold")
 loseColor = "#ffffff"
-cellColor = "#c2b3a9"
+emptyCellColor = "#c2b3a9"
 boxColor = "#a39489"
+scoreNumberFont = ("Courier New", 28, "bold")
+scoreTitleFont = ("Courier New", 20, "bold")
 
 # assigning font face and size depending on the cell space
 numberFonts = {
