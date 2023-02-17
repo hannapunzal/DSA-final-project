@@ -1,3 +1,9 @@
+# watch video demo for part by part code explanation
+# modified functions:
+#            changed style and game design through styles module
+#            modified the dsa into a simpler version
+#            changed the structure for traversing, accessing, and manipulating matrix/game cells
+
 import random
 import tkinter as tk
 import styles as s
@@ -78,4 +84,14 @@ def stack(self): # to compress all non-zero numbers in the matrix to one side of
                 new_matrix[i][fill_position] = self.matrix[i][j]
                 fill_position += 1
     self.matrix = new_matrix
+
+# pushing and merging horizontally adjacent cells with the same value (eg. 4 & 4 / 2 & 2) to the left most part of the matrix 
+
+def combine(self):
+    for i in range(4):
+        for j in range(3):
+            if self.matrix[i][j] != 0 and self.matrix[i][j] == self.matrix[i][j + 1]:
+                self.matrix[i][j] *= 2
+                self.matrix[i][j + 1] = 0
+                self.score += self.matrix[i][j]
     
