@@ -113,3 +113,13 @@ def transpose(self):
             for j in range(4):
                 new_matrix[i][j] = self.matrix[j][i]
         self.matrix = new_matrix
+
+
+# add a random tile with 2 or 4 value whenever an empty cell occurs
+def addNewTile(self):
+        row = random.randint(0, 3)
+        col = random.randint(0, 3)
+        while(self.matrix[row][col] != 0):
+            row = random.randint(0, 3)
+            col = random.randint(0, 3)
+        self.matrix[row][col] = random.choice([2, 4])
