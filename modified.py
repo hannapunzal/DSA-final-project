@@ -4,6 +4,15 @@
 #            modified the dsa into a simpler version
 #            changed the structure for traversing, accessing, and manipulating matrix/game cells
 #            added score increment and display
+#            added win/lose algorithm and display
+
+# --------------------------------------------------
+# program is now complete; errors encountered:
+#            score not being displayed
+#            score not incrementing
+#            cells not moving
+#            numbers not displaying
+# ------------------ ALL FIXED ---------------------
 
 import random
 import tkinter as tk
@@ -243,3 +252,8 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+# ------------------------------------------------------------
+# IN COMPLETION WITH THE COURSE DATA STRUCTURES AND ALGORITHM
+# PUP STA MESA
+# 2023 FEBRUARY
