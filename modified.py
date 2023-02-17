@@ -196,6 +196,44 @@ class Game(tk.Frame):
         self.addNewTile()
         self.interfaceUpdate()
 
+    # END GAME FUNCTIONS
+    def horizontal_move_exists(self):
+        for i in range(4):
+            for j in range(3):
+                if self.matrix[i][j] == self.matrix[i][j + 1]:
+                    return True
+        return False
+
+
+    def vertical_move_exists(self):
+        for i in range(3):
+            for j in range(4):
+                if self.matrix[i][j] == self.matrix[i + 1][j]:
+                    return True
+        return False
+
+    # WIN/LOSE FUNCTIONS
+    def game_over(self):
+        if any(2048 in row for row in self.matrix):
+            game_over_frame = tk.Frame(self.main_grid, borderwidth=2)
+            game_over_frame.place(relx=0.5, rely=0.5, anchor="center")
+            tk.Label(
+                game_over_frame,
+                text="WIN",
+                bg=s.winBackground,
+                fg=s.loseColor,
+                font=s.loseFont).pack()
+        elif not any(0 in row for row in self.matrix) and not self.horizontal_move_exists() and not self.vertical_move_exists():
+            game_over_frame = tk.Frame(self.main_grid, borderwidth=2)
+            game_over_frame.place(relx=0.5, rely=0.5, anchor="center")
+            tk.Label(
+                game_over_frame,
+                text="LOSE",
+                bg=s.loseBackground,
+                fg=s.loseColor,
+                font=s.loseFont).pack()
+
+
 def main():
     Game()
 
