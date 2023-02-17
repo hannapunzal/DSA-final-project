@@ -1,4 +1,4 @@
-#style module
+#style module for the modified game
 #using dictionary for easier storing and accessing
 
 # game design
