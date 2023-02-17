@@ -155,3 +155,40 @@ def interfaceUpdate(self):
                     text=str(cell_value))
     self.score_label.configure(text=self.score)
     self.update_idletasks()
+
+#functions for structure of keybinds
+def left(self, event): # 2nd positional event argument for tkinter
+    self.stack()
+    self.combine()
+    self.stack()
+    self.addNewTile()
+    self.interfaceUpdate()
+
+def right(self, event): # 2nd positional event argument for tkinter
+    self.reverse()
+    self.stack()
+    self.combine()
+    self.stack()
+    self.reverse()
+    self.addNewTile()
+    self.interfaceUpdate()
+
+def up(self, event): # 2nd positional event argument for tkinter
+    self.transpose()
+    self.stack()
+    self.combine()
+    self.stack()
+    self.transpose()
+    self.addNewTile()
+    self.interfaceUpdate()
+
+def down(self, event): # 2nd positional event argument for tkinter
+    self.transpose()
+    self.reverse()
+    self.stack()
+    self.combine()
+    self.stack()
+    self.reverse()
+    self.transpose()
+    self.addNewTile()
+    self.interfaceUpdate()
