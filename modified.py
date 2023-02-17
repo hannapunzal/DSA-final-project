@@ -94,4 +94,13 @@ def combine(self):
                 self.matrix[i][j] *= 2
                 self.matrix[i][j + 1] = 0
                 self.score += self.matrix[i][j]
-    
+
+# appending empty list then reversing the value after the for loop to reverse the order of rows
+
+def reverse(self):
+        new_matrix = []
+        for i in range(4):
+            new_matrix.append([])
+            for j in range(4):
+                new_matrix[i].append(self.matrix[i][3 - j])
+        self.matrix = new_matrix
