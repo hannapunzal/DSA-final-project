@@ -75,6 +75,7 @@ def stack(self): # to compress all non-zero numbers in the matrix to one side of
         fill_position = 0
         for j in range(4):
             if self.matrix[i][j] != 0:
-                new_matrix[i][self.matrix] = fill_position[i][j]
+                new_matrix[i][fill_position] = self.matrix[i][j]
                 fill_position += 1
     self.matrix = new_matrix
+    
