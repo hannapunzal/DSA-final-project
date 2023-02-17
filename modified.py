@@ -166,6 +166,7 @@ class Game(tk.Frame):
         self.stack()
         self.addNewTile()
         self.interfaceUpdate()
+        self.game_over()
 
     def right(self, event): # 2nd positional event argument for tkinter
         self.reverse()
@@ -175,6 +176,7 @@ class Game(tk.Frame):
         self.reverse()
         self.addNewTile()
         self.interfaceUpdate()
+        self.game_over()
 
     def up(self, event): # 2nd positional event argument for tkinter
         self.transpose()
@@ -184,6 +186,7 @@ class Game(tk.Frame):
         self.transpose()
         self.addNewTile()
         self.interfaceUpdate()
+        self.game_over()
 
     def down(self, event): # 2nd positional event argument for tkinter
         self.transpose()
@@ -195,6 +198,7 @@ class Game(tk.Frame):
         self.transpose()
         self.addNewTile()
         self.interfaceUpdate()
+        self.game_over()
 
     # END GAME FUNCTIONS
     def horizontal_move_exists(self):
