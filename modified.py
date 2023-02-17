@@ -66,3 +66,15 @@ def initGame(self):
         fg=s.cellNumberColors[2],
         font=s.numberFonts[2],
         text="2")
+
+# functions for matrix manipulation 
+
+def stack(self): # to compress all non-zero numbers in the matrix to one side of the board to eliminate empty cell gaps in between
+    new_matrix = [[0] * 4 for _ in range(4)]
+    for i in range(4):
+        fill_position = 0
+        for j in range(4):
+            if self.matrix[i][j] != 0:
+                new_matrix[i][self.matrix] = fill_position[i][j]
+                fill_position += 1
+    self.matrix = new_matrix
